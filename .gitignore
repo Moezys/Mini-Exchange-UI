@@ -1,0 +1,79 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+.dist/
+dist/
+build/
+.vite/
+.next/
+out/
+
+# Env
+.env
+.env.*.local
+.env.local
+
+# Lock/cache (do NOT ignore lockfiles like package-lock.json / pnpm-lock.yaml / yarn.lock)
+.npm
+.nyc_output
+
+# Storybook / static build outputs
+.storybook-out
+.out
+
+# Cache / bundler / temp
+.cache/
+.parcel-cache/
+tmp/
+temp/
+
+# Coverage & test results
+coverage/
+*.lcov
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Logs
+logs/
+*.log
+
+# Runtime data / pids
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Misc
+jspm_packages/
+.node_repl_history
+*.tgz
+.yarn-integrity
+
+# Vercel / Netlify local config & cache
+.vercel/
+.netlify/
+
+# Optional: local dev server previews
+.vs/
