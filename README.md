@@ -2,7 +2,7 @@
 
 A sophisticated frontend-only trading interface simulation built with React, TypeScript, Vite, and Tailwind CSS. This application provides a realistic trading experience without actual financial transactions.
 
-🌐 **[Live Demo](https://mini-exchange-ui.vercel.app)** | 📚 **[Documentation](#-developer-guide)** | 🚀 **[Quick Start](#-quick-start)**
+🌐 **[Live Demo](https://mini-exchange-ui-bze2.vercel.app)** | 📚 **[Documentation](#-developer-guide)** | 🚀 **[Quick Start](#-quick-start)**
 
 ![Mini Exchange UI](docs/screenshot.png)
 
@@ -29,6 +29,7 @@ A sophisticated frontend-only trading interface simulation built with React, Typ
 - **Order Matching Engine** - Complete order matching logic
 - **Test Coverage** - Comprehensive unit and integration tests
 - **Performance Monitoring** - Built-in rendering optimization
+- **Analytics** - Vercel Analytics integration for usage tracking
 
 ## 🚀 Quick Start
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Play, Pause, Activity } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import { OrderBook } from './components/OrderBook';
 import { OrderEntryForm } from './components/OrderEntryForm';
 import { TradeHistory } from './components/TradeHistory';
@@ -131,6 +132,9 @@ const App: React.FC = () => {
           <div>Mode: {isPaused ? 'Paused' : 'Streaming'}</div>
         </div>
       )}
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 };
