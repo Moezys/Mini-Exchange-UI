@@ -2,6 +2,8 @@
 
 A sophisticated frontend-only trading interface simulation built with React, TypeScript, Vite, and Tailwind CSS. This application provides a realistic trading experience without actual financial transactions.
 
+🌐 **[Live Demo](https://mini-exchange-ui.vercel.app)** | 📚 **[Documentation](#-developer-guide)** | 🚀 **[Quick Start](#-quick-start)**
+
 ![Mini Exchange UI](docs/screenshot.png)
 
 ## ✨ Features
@@ -38,8 +40,8 @@ A sophisticated frontend-only trading interface simulation built with React, Typ
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mini-exchange-ui.git
-cd mini-exchange-ui
+git clone https://github.com/Moezys/Mini-Exchange-UI.git
+cd Mini-Exchange-UI
 
 # Install dependencies
 npm install
@@ -362,8 +364,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - 📧 **Email**: support@mini-exchange-ui.com
 - 💬 **Discord**: [Join our community](https://discord.gg/mini-exchange-ui)
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/yourusername/mini-exchange-ui/issues)
-- 📖 **Documentation**: [Full docs](https://docs.mini-exchange-ui.com)
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/Moezys/Mini-Exchange-UI/issues)
+- 📖 **Documentation**: [Full docs](https://github.com/Moezys/Mini-Exchange-UI#readme)
 
 ---
 
