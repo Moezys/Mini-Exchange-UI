@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { act } from 'react';
 import { OrderEntryForm } from '../components/OrderEntryForm';
 import { useExchangeStore } from '../store/exchangeStore';
 
@@ -37,10 +38,16 @@ describe('OrderEntryForm Integration', () => {
 
   test('should open order modal when button is clicked', async () => {
     const user = userEvent.setup();
-    render(<OrderEntryForm />);
+    
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
     const openButton = screen.getByText(/new order/i);
-    await user.click(openButton);
+    
+    await act(async () => {
+      await user.click(openButton);
+    });
 
     expect(mockStore.setOrderModalOpen).toHaveBeenCalledWith(true);
   });
@@ -79,10 +86,15 @@ describe('OrderEntryForm Integration', () => {
       },
     });
 
-    render(<OrderEntryForm />);
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
     const submitButton = screen.getByRole('button', { name: /place buy order/i });
-    await user.click(submitButton);
+    
+    await act(async () => {
+      await user.click(submitButton);
+    });
 
     expect(mockStore.submitOrder).toHaveBeenCalledWith({
       side: 'buy',
@@ -105,10 +117,15 @@ describe('OrderEntryForm Integration', () => {
       },
     });
 
-    render(<OrderEntryForm />);
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
     const submitButton = screen.getByRole('button', { name: /place buy order/i });
-    await user.click(submitButton);
+    
+    await act(async () => {
+      await user.click(submitButton);
+    });
 
     await waitFor(() => {
       expect(screen.getByText(/quantity must be greater than 0/i)).toBeInTheDocument();
@@ -125,13 +142,20 @@ describe('OrderEntryForm Integration', () => {
       isOrderModalOpen: true,
     });
 
-    render(<OrderEntryForm />);
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
     const priceInput = screen.getByLabelText(/price/i);
     const quantityInput = screen.getByLabelText(/quantity/i);
 
-    await user.type(priceInput, '100.50');
-    await user.type(quantityInput, '2.5');
+    await act(async () => {
+      await user.type(priceInput, '100.50');
+    });
+    
+    await act(async () => {
+      await user.type(quantityInput, '2.5');
+    });
 
     expect(mockStore.updateOrderForm).toHaveBeenCalledWith({ price: expect.any(String) });
     expect(mockStore.updateOrderForm).toHaveBeenCalledWith({ quantity: expect.any(String) });
@@ -144,10 +168,15 @@ describe('OrderEntryForm Integration', () => {
       isOrderModalOpen: true,
     });
 
-    render(<OrderEntryForm />);
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
     const sellButton = screen.getByRole('button', { name: /sell/i });
-    await user.click(sellButton);
+    
+    await act(async () => {
+      await user.click(sellButton);
+    });
 
     expect(mockStore.updateOrderForm).toHaveBeenCalledWith({ side: 'sell' });
   });
@@ -159,10 +188,15 @@ describe('OrderEntryForm Integration', () => {
       isOrderModalOpen: true,
     });
 
-    render(<OrderEntryForm />);
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
     const marketButton = screen.getByRole('button', { name: /market/i });
-    await user.click(marketButton);
+    
+    await act(async () => {
+      await user.click(marketButton);
+    });
 
     expect(mockStore.updateOrderForm).toHaveBeenCalledWith({ type: 'market' });
   });
@@ -175,10 +209,15 @@ describe('OrderEntryForm Integration', () => {
       currentOrder: { ...mockStore.currentOrder, side: 'buy' },
     });
 
-    render(<OrderEntryForm />);
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
     const quickFillButton = screen.getByRole('button', { name: /best ask/i });
-    await user.click(quickFillButton);
+    
+    await act(async () => {
+      await user.click(quickFillButton);
+    });
 
     expect(mockStore.updateOrderForm).toHaveBeenCalledWith({ price: '100.5' });
   });
@@ -190,9 +229,13 @@ describe('OrderEntryForm Integration', () => {
       isOrderModalOpen: true,
     });
 
-    render(<OrderEntryForm />);
+    await act(async () => {
+      render(<OrderEntryForm />);
+    });
 
-    await user.keyboard('{Escape}');
+    await act(async () => {
+      await user.keyboard('{Escape}');
+    });
 
     expect(mockStore.setOrderModalOpen).toHaveBeenCalledWith(false);
   });
